@@ -20,4 +20,40 @@ Constraints:
  */
 
 
+class Solution {
+    public int getSecondLargest(int[] a) {
+//       int largest=Integer.MIN_VALUE;
+//       for(int i=0;i<a.length;i++)
+//       {
+//           largest=Math.max(largest,a[i]);
+//       }
+//       int second_Largest=-1;
+//       for(int i=0;i<a.length;i++)
+//       {
+//           if(a[i]<largest)
+//           {
+//               second_Largest=Math.max(second_Largest,a[i]);
+//           }
+//       }
+//       return second_Largest;
+//     }
+// }
+          
+          int largest=a[0];
+          int second_Largest=-1;
+          for(int i=1;i<a.length;i++)
+          {
+              if(a[i]>largest)
+              {
+                  second_Largest=largest;
+                  largest=a[i];
+              }
+              else if(a[i]>second_Largest  && a[i]<largest)
+              {
+                  second_Largest=a[i];
+              }
+          }
+          return second_Largest;
+    }
+}
 
